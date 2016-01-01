@@ -1,3 +1,4 @@
 <layout id="MainLayout">
+    <label id="NotesStatus" x="0" y="0" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_GREEN" />
     <label id="NotesLabel" x="center" y="center" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLUE" />
 </layout>

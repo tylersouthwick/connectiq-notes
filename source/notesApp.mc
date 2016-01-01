@@ -17,7 +17,8 @@ class notesApp extends App.AppBase {
 
     //! Return the initial view of your application here
     function getInitialView() {
-        return [ new notesView(), new notesDelegate() ];
+    var view = new notesView();
+        return [ view, new notesDelegate(view) ];
     }
 
 }
