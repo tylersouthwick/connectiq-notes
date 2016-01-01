@@ -17,12 +17,12 @@ class notesDelegate extends Ui.BehaviorDelegate {
     }
     
     function onNextPage() {
-    	view.next();
+    	view.updateCount(1);
     	return true;
     }
     
     function onPreviousPage() {
-    	view.previous();
+    	view.updateCount(-1);
     	return true;
     }
 

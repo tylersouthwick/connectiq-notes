@@ -44,21 +44,14 @@ class notesView extends Ui.View {
     
     function updateCount(delta) {
       count += delta;
-      System.println("new count: " + count + " / " + notes.size());
+      //System.println("new count: " + count + " / " + notes.size());
       if (count == -1) {
         count = notes.size() - 1;
       } else if (count == notes.size()) {
         count = 0;
       }
-      System.println("adjusted count: " + count + " / " + notes.size());
+      //System.println("adjusted count: " + count + " / " + notes.size());
       WatchUi.requestUpdate();
     }
     
-    function next() {
-      updateCount(1);
-    }
-    
-    function previous() {
-      updateCount(-1);
-    }
 }
