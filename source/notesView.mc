@@ -19,7 +19,9 @@ class notesView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
-        // Call the parent onUpdate function to redraw the layout
+        var view = View.findDrawableById("NotesLabel");
+        //TODO pull this from settings?
+        view.setText("hello world");
         View.onUpdate(dc);
     }
 
