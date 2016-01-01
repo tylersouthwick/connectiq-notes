@@ -1,0 +1,7 @@
+<settings>
+
+    <setting propertyKey="@Properties.Notes" title="@Strings.NotesConfig">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+
+</settings>

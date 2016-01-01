@@ -3,8 +3,15 @@ using Toybox.WatchUi as Ui;
 
 class notesApp extends App.AppBase {
 
+    var notes;
     function initialize() {
         AppBase.initialize();
+        var notesProperty = App.getApp().getProperty("Notes");
+        System.println("notes: " + notesProperty);
+        
+        notes = new Notes(notesProperty);
+        
+        System.println("notes: " + notes);
     }
 
     //! onStart() is called on application start up
@@ -17,7 +24,7 @@ class notesApp extends App.AppBase {
 
     //! Return the initial view of your application here
     function getInitialView() {
-    var view = new notesView();
+    var view = new notesView(notes);
         return [ view, new notesDelegate(view) ];
     }
 

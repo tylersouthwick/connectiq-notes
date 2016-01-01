@@ -2,14 +2,10 @@ using Toybox.WatchUi as Ui;
 
 class notesView extends Ui.View {
 
-    var notes = [
-    "hello",
-    "combo",
-    "something else"
-    ];
-    var count;
-    function initialize() {
-        count = 0;
+    var notes;
+    
+    function initialize(theNotes) {
+        notes = theNotes;
         View.initialize();
     }
 
@@ -28,11 +24,11 @@ class notesView extends Ui.View {
     function onUpdate(dc) {
         var view = View.findDrawableById("NotesLabel");
         //TODO pull this from settings?
-        view.setText(notes[count]);
+        view.setText(notes.get());
         
         
         var status = View.findDrawableById("NotesStatus");
-        status.setText("" + (count + 1) + " / " + notes.size());
+        status.setText("" + (notes.index()) + " / " + notes.size());
         View.onUpdate(dc);
     }
 
@@ -43,13 +39,7 @@ class notesView extends Ui.View {
     }
     
     function updateCount(delta) {
-      count += delta;
-      //System.println("new count: " + count + " / " + notes.size());
-      if (count == -1) {
-        count = notes.size() - 1;
-      } else if (count == notes.size()) {
-        count = 0;
-      }
+      notes.updateCount(delta);
       //System.println("adjusted count: " + count + " / " + notes.size());
       WatchUi.requestUpdate();
     }
