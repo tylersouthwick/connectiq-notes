@@ -7,6 +7,11 @@ class Notes {
 		notes = notesString;
 		count = 0;
 	}
+	
+	function update(notesString) {
+	    notes = notesString;
+	    count = 0;
+	}
       
 	function splitString(s, token) {
 		var a = [];
@@ -60,9 +65,9 @@ class Notes {
       	//System.println("new count: " + count + " / " + notes.size());
         var size = size();
         System.println("delta: " + delta + " - size: " + size);
-      	if (count == -1) {
+      	if (count < 0) {
         	count = size - 1;
-      	} else if (count == size) {
+      	} else if (count >= size) {
         	count = 0;
       	}
     }
