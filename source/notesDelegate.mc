@@ -8,9 +8,17 @@ class notesDelegate extends Ui.BehaviorDelegate {
         BehaviorDelegate.initialize();
     }
 
-    function onMenu() {
+    function onKey(evt) {
+      //we will pretend that the mode key is the menu key
+      //onMenu isn't being triggered by any thing
+      if (evt.getKey() == WatchUi.KEY_MODE) {
+        return onMenu();
+      } else {
+        return false;
+      }
+    }
     
-    System.println("menu");
+    function onMenu() {
         Ui.pushView(new Rez.Menus.MainMenu(), new notesMenuDelegate(), Ui.SLIDE_UP);
         
         return true;
